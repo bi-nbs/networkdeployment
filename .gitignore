@@ -40,3 +40,7 @@ build/
 .idea/inspectionProfiles/profiles_settings.xml
 .idea/.name
 kotlin-ultimate/
+
+src/main/java/Model/Backend/MySQL/Generated/
+
+target/
