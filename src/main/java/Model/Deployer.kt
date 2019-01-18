@@ -1,0 +1,4 @@
+package Model
+
+interface Deployer {
+}
