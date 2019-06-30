@@ -84,7 +84,55 @@
                     <jvmTarget>1.8</jvmTarget>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen-maven</artifactId>
+                <version>${jooq.version}</version>
+
+                <executions>
+                    <execution>
+                        <id>jooq-codegen</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <jdbc>
+                        <driver>com.mysql.cj.jdbc.Driver</driver>
+                        <url>jdbc:mysql://192.168.223.21/networkdeployment</url>
+                        <user>networkdeployment</user>
+                        <password>84DkH#J9Bb4X</password>
+                    </jdbc>
+
+                    <generator>
+                        <name>org.jooq.codegen.JavaGenerator</name>
+
+                        <database>
+                            <name>org.jooq.meta.mysql.MySQLDatabase</name>
+                            <includes>.*</includes>
+                            <excludes></excludes>
+                        </database>
+
+                        <target>
+                            <packageName>Model.Backend.MySQL.Generated</packageName>
+                            <directory>src/main/java</directory>
+                        </target>
+                    </generator>
+
+                </configuration>
+
+
+            </plugin>
+
         </plugins>
+
+
+
+
     </build>
 
     
